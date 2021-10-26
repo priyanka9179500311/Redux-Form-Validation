@@ -1,13 +1,13 @@
 import {createStore, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
-import userRegisterAction from './actions/userRegister'
+import { userRegisterAction } from './actions/userRegister'
 
-//import rootReducer from './reducers/index'
+// import rootReducer from './reducers/index'
 
-// const initalState = {
+//  const initalState = {
 
-// }
+//  }
 
 const middleware = [thunk]
 

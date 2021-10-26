@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import './signup.css';
-import userRegisterAction from "../actions/userRegister";
-// import { Field } from 'redux-form' 
+import { userRegisterAction} from "../actions/userRegister";
+import { useEffect } from "react";
+import { useHistory } from "react-router";
+
 
 const Signup = () => {
+    useEffect(() => {
+        if(localStorage.getItem('auth_token')){
+          history.push('/');
+        }
+      }, [])
+      const history = useHistory(); 
     const [first_name, setFirstName] = useState()
     const [last_name, setLastName] = useState();
     const [email, setEmail] = useState();
@@ -15,12 +23,15 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+           
             let item = { first_name, last_name, email, password, date_of_birth }
             console.log(item);
+
             let response = await dispatch(userRegisterAction(item));
-            alert("Data Send Successfully")
-            //response = response?.payload
+            response = response?.payload
             console.log('response**********************',response)
+            //alert("Data Send Successfully")
+            
         } catch (error) {
             console.log(error?.response);
             if (error?.response?.status === 400) {
@@ -33,7 +44,7 @@ const Signup = () => {
 
     return (
         <>
-            {/* <userRegisterAction /> */}
+           
 
             <div className="col-sm-6 offset-sm-3">
                 <h1>Registration Form</h1>

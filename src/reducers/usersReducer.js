@@ -1,24 +1,24 @@
-// import {SAVE_USERS} from '../actions/types'
+import {SAVE_USERS} from '../actions/types'
 
-// const initialState = {
-//     item:{},
-//     loading:true
-// }
+const initialState = {
+    Signup:{},
+    loading:true
+}
 
-// const userReducer=(state = initialState, action)=>{
-//     console.log('#########',action)
-//     switch(action.type){
+const userReducer=(state = initialState, action)=>{
+    console.log('#########',action)
+    switch(action.type){
 
-//         case SAVE_USERS:
-//         return {
-//             ...state,
-//             Signup:action.payload,
-//             loading:false
+        case SAVE_USERS:
+        return {
+            ...state,
+            Signup:action.payload,
+            loading:false
 
-//         }
-//         default: return state
-//     }
+        }
+        default: return state
+    }
 
-// }
+}
 
-// export default userReducer;
+export default userReducer;
