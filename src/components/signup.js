@@ -60,8 +60,7 @@ const Signup = () => {
                     Password<input type="password"  value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" required />
                     <br />
                     Date of birth<input type="string" value={date_of_birth} onChange={(e) => setDate(e.target.value)} className="form-control" placeholder="yyyy/mm/dd" required />
-                    <br />
-
+                    <br /> 
                     <button type="submit" >signup</button>
 
 
