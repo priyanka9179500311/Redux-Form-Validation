@@ -1,7 +1,8 @@
-import {SAVE_USERS} from '../actions/types'
+import {SAVE_USERS, USERS_LOGIN} from '../actions/types'
 
 const initialState = {
     Signup:{},
+    Login:{},
     loading:true
 }
 
@@ -15,6 +16,12 @@ const userReducer=(state = initialState, action)=>{
             Signup:action.payload,
             loading:false
 
+        }
+        case USERS_LOGIN:
+        return{
+            ...state,
+            Login:action.payload,
+            loading:false
         }
         default: return state
     }
